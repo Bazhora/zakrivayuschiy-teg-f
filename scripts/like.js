@@ -39,3 +39,26 @@ function setButtonText(heart, button) {
     );
   }
 }
+
+
+document.querySelectorAll('.card__icon-button').forEach(button => {
+  button.addEventListener('click', () => {
+    button.classList.toggle('is-active');
+  });
+});
+
+const saveButton = document.querySelector('.save-button');
+const modalDialog = document.querySelector('.modal-dialog');
+const closeDialogButton = document.querySelector('.modal-dialog__close-btn');
+
+if (saveButton && modalDialog) {
+  saveButton.addEventListener('click', () => {
+    modalDialog.showModal();
+  });
+}
+
+if (closeDialogButton && modalDialog) {
+  closeDialogButton.addEventListener('click', () => {
+    modalDialog.close();
+  });
+}
